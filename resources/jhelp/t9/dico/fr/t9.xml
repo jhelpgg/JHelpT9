@@ -1,0 +1,33 @@
+<T9>
+	<Key
+		name="1"
+		characters=".,;:!?'1" />
+	<Key
+		name="2"
+		characters="aàäâbcç2ABC" />
+	<Key
+		name="3"
+		characters="deéèêëf3DEF" />
+	<Key
+		name="4"
+		characters="ghiîï4GHIJ" />
+	<Key
+		name="5"
+		characters="jkl5JKL" />
+	<Key
+		name="6"
+		characters="mnoôö6MNO" />
+	<Key
+		name="7"
+		characters="pqrs7PQRS" />
+	<Key
+		name="8"
+		characters="tuùûüv8TUV" />
+	<Key
+		name="9"
+		characters="wxyz9WXYZ" />
+	<Key
+		name="0"
+		characters="@- 0" />
+	<Separators>.,;:!?' \n\t-@</Separators>
+</T9>
