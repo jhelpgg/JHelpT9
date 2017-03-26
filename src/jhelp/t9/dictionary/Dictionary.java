@@ -212,7 +212,7 @@ public class Dictionary
             {
                bufferedReader.close();
             }
-            catch(final Exception exception)
+            catch(final Exception ignored)
             {
             }
          }
@@ -230,7 +230,7 @@ public class Dictionary
     */
    private void initializeDictionary(boolean reset) throws DictionaryException
    {
-      if(reset == true)
+      if(reset)
       {
          UtilIO.delete(this.languageDirectory);
       }
@@ -238,7 +238,7 @@ public class Dictionary
       // Get map
       final File map = new File(this.languageDirectory, Dictionary.T9_MAP_NAME);
 
-      if(map.exists() == false)
+      if(!map.exists())
       {
          reset = true;
 
@@ -264,7 +264,7 @@ public class Dictionary
             {
                inputStream.close();
             }
-            catch(final Exception exception)
+            catch(final Exception ignored)
             {
             }
          }
@@ -291,7 +291,7 @@ public class Dictionary
             {
                inputStream.close();
             }
-            catch(final Exception exception)
+            catch(final Exception ignored)
             {
             }
          }
@@ -333,7 +333,7 @@ public class Dictionary
          throw new DictionaryException(exception, "Failed to create or access to database ", this.wordListFile.getAbsolutePath());
       }
 
-      if(reset == true)
+      if(reset)
       {
          this.insertInitialList(this.language);
          this.addAdditionalList();
@@ -370,7 +370,7 @@ public class Dictionary
 
             if((line.length() > 0) && (line.charAt(0) != '#'))
             {
-               if(line.startsWith(Dictionary.GRAMMAR) == true)
+               if(line.startsWith(Dictionary.GRAMMAR))
                {
                   line = line.substring(Dictionary.GRAMMAR.length()).trim();
                   indexFrequency = line.indexOf(Dictionary.FREQUENCY);
@@ -405,7 +405,7 @@ public class Dictionary
                   read[0] = null;
                   read[1] = null;
 
-                  if(Dictionary.SPACE.equals(separator) == true)
+                  if(Dictionary.SPACE.equals(separator))
                   {
                      index = line.indexOf(' ');
                      index2 = line.indexOf('\t');
@@ -449,7 +449,7 @@ public class Dictionary
 
                   if(read[0] != null)
                   {
-                     if(frequencyFirst == true)
+                     if(frequencyFirst)
                      {
                         indexFrequency = 0;
                         indexWord = 1;
@@ -480,7 +480,7 @@ public class Dictionary
             {
                bufferedReader.close();
             }
-            catch(final Exception exception)
+            catch(final Exception ignored)
             {
             }
          }

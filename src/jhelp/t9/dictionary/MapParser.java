@@ -97,7 +97,7 @@ class MapParser
    @Override
    public void endMarkup(final String markupName) throws ExceptionXML
    {
-      if(MapParser.MARKUP_SEPARATORS.equals(markupName) == true)
+      if(MapParser.MARKUP_SEPARATORS.equals(markupName))
       {
          this.inSeparators = false;
       }
@@ -173,12 +173,12 @@ class MapParser
    @Override
    public void startMakup(final String markupName, final Hashtable<String, String> parameters) throws ExceptionXML
    {
-      if(MapParser.MARKUP_T9.equals(markupName) == true)
+      if(MapParser.MARKUP_T9.equals(markupName))
       {
          return;
       }
 
-      if(MapParser.MARKUP_KEY.equals(markupName) == true)
+      if(MapParser.MARKUP_KEY.equals(markupName))
       {
          final int name = ParserXML.obtainInteger(markupName, parameters, MapParser.PARAMETER_NAME, true, -1);
          final String characters = ParserXML.obtainParameter(markupName, parameters, MapParser.PARAMETER_CHARACTERS, true);
@@ -193,7 +193,7 @@ class MapParser
          return;
       }
 
-      if(MapParser.MARKUP_SEPARATORS.equals(markupName) == true)
+      if(MapParser.MARKUP_SEPARATORS.equals(markupName))
       {
          this.inSeparators = true;
 
@@ -238,7 +238,7 @@ class MapParser
    @Override
    public void textFind(final String text) throws ExceptionXML
    {
-      if(this.inSeparators == true)
+      if(this.inSeparators)
       {
          this.separators = text;
       }
